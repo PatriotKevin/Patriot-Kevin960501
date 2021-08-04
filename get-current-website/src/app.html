@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/assets/css/vendor.css">
+		<link rel="stylesheet" href="/assets/css/style.css">
+		<script>
+		// register jQuery extension
+		document.onreadystatechange = function () {
+			if (document.readyState === "interactive") {
+				jQuery.extend(jQuery.expr[':'], {
+					focusable: function (el, index, selector) {
+						return jQuery(el).is('a, button, :input, [tabindex]');
+					}
+				});
+			}
+		}
+		</script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-8LQCR6LR80"></script>
+		<script>
+		 window.dataLayer = window.dataLayer || [];
+		 function gtag(){dataLayer.push(arguments);}
+		 gtag('js', new Date());
+
+		 gtag('config', 'G-8LQCR6LR80');
+		</script>
+		%svelte.head%
+	</head>
+	<body>
+		<div id="svelte" class="flex-wrapper">%svelte.body%</div>
+		<script src="/assets/js/vendor.js"></script>
+    	<script src="/assets/js/main.js"></script>
+	</body>
+</html>
